@@ -1,0 +1,68 @@
+---
+import ArrowRightIcon from "../icons/ArrowRightIcon.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  href?: string;
+  "data-aos"?: string;
+  "data-aos-duration"?: string;
+  "data-aos-delay"?: string;
+}
+const {
+  title,
+  description,
+  image,
+  href,
+  "data-aos": dataAos,
+  "data-aos-duration": dataAosDuration,
+  "data-aos-delay": dataAosDelay,
+} = Astro.props;
+---
+
+<div
+  data-aos={dataAos}
+  data-aos-duration={dataAosDuration}
+  data-aos-delay={dataAosDelay}
+  class="flex flex-col justify-center items-center"
+>
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex flex-col justify-center items-center"
+    href={href}
+  >
+    <div class="image-container relative flex justify-center items-center">
+      <span
+        class="opacity-0
+      absolute
+      z-10
+      text-4xl text-white font-bold
+      transition-opacity duration-300
+      flex flex-row items-center gap-2"
+        >Go to Project <ArrowRightIcon class="size-8" /></span
+      >
+      <img
+        class="mb-5 w-100 h-100 transition-transform duration-300 z-0"
+        src={image}
+        alt={`Imagen del proyecto ${title}`}
+      />
+    </div>
+  </a>
+  <h3 class="text-3xl font-bold mb-1">{title}</h3>
+  <span class="text-lg text-gray-300/80 mb-6">{description}</span>
+  <div class="flex flex-row justify-center items-center gap-5">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .image-container:hover span {
+    opacity: 100 !important;
+  }
+  .image-container:hover img {
+    transform: scale(0.95);
+    filter: blur(4px) brightness(0.7);
+  }
+</style>
