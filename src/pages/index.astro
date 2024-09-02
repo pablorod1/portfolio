@@ -25,11 +25,11 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
   title="Portfolio de Pablo - Desarrollador y Programador Web"
   description="Portfolio de Pablo, desarrollador web especializado en Angular y principiante en Astro. Creador de interfaces dinámicas y eficientes para una experiencia de usuario excepcional."
 >
-  <main>
+  <main class="w-full">
     <SectionContainer
-      class="py-24 pb-24 mx-0 px-6 flex flex-col justify-center items-center min-h-screen"
+      class="py-24 pb-24 mx-0 px-6 w-screen flex flex-col justify-center items-center flex-wrap"
     >
-      <div class="flex flex-col justify-center items-start">
+      <div class="flex flex-col justify-center items-start w-full">
         <img
           class="rounded-full size-14 mb-4 object-cover"
           src="images/profile-picture.webp"
@@ -37,8 +37,8 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
         />
         <h1
           class="text-white text-3xl md:text-4xl lg:text-5xl
-          font-bold flex justify-center items-center
-          gap-x-4 pb-6"
+          font-bold flex flex-col justify-center items-start
+          gap-x-4 pb-6 md:flex-row md:items-center"
         >
           Pablo Rodríguez 
           <a
@@ -62,7 +62,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
           </span>
         </h2>
 
-        <nav class="flex gap-4 mt-6">
+        <nav class="flex flex-wrap gap-4 mt-6">
           <SocialPill
             href="https://www.linkedin.com/in/pablorodriguezalbarran/"
           >
