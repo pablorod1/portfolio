@@ -27,7 +27,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
 >
   <main>
     <SectionContainer
-      class="py-24 pb-24 w-screen mx-0 px-6 flex flex-col justify-center items-center min-h-screen"
+      class="py-24 pb-24 mx-0 px-6 flex flex-col justify-center items-center min-h-screen"
     >
       <div class="flex flex-col justify-center items-start">
         <img
@@ -37,8 +37,8 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
         />
         <h1
           class="text-white text-3xl md:text-4xl lg:text-5xl
-          font-bold flex justify-start items-start
-          flex-col gap-x-4 pb-6 md:flex-row md:items-center"
+          font-bold flex justify-center items-center
+          gap-x-4 pb-6"
         >
           Pablo Rodríguez 
           <a
@@ -62,7 +62,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
           </span>
         </h2>
 
-        <nav class="flex flex-col gap-4 mt-6 flex-wrap sm:flex-row">
+        <nav class="flex gap-4 mt-6">
           <SocialPill
             href="https://www.linkedin.com/in/pablorodriguezalbarran/"
           >
@@ -88,7 +88,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
 
     <SectionContainer
       id="experience"
-      class="pt-64 pb-44 px-10 mx-0 w-screen relative lg:w-screen md:w-screen md:mx-0  min-h-screen"
+      class="pt-24 pb-44 px-10 mx-0 relative lg:w-screen md:w-screen md:mx-0 md:pt-64 min-h-screen"
     >
       <img
         class="absolute top-4 z-[-1] opacity-[0.03] pe-16 lg:top-16"
@@ -98,7 +98,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
     </SectionContainer>
 
     <SectionContainer
-      class="py-56 pb-56 px-10 mx-0 w-screen relative min-h-screen"
+      class="py-56 pb-56 px-10 mx-0 relative min-h-screen"
       id="projects"
     >
       <div class="mb-20" data-aos="fade-in">
@@ -106,7 +106,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
           class="w-full absolute  -top-32 lg:-top-44 z-[-1] opacity-[0.03]"
           src="images/PROYECTOS.webp"
         />
-        <h2 class="text-6xl text-center mb-2 text-balance text-white">Bienvenido a mi Portfolio</h2>
+        <h2 class="text-6xl text-center mb-2 text-white">Bienvenido a mi Portfolio</h2>
         <p class="text-xl text-center text-gray-300/80">
           Este es mi portfolio personal, donde muestro mis proyectos y mi
           experiencia en el desarrollo web.
@@ -157,7 +157,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
 
     <SectionContainer
       id="about"
-      class="py-56 pb-24 relative mx-0 w-screen px-6 md:w-screen md:mx-0 min-h-screen"
+      class="py-56 pb-24 relative mx-0  px-6 md:w-screen md:mx-0 min-h-screen"
     >
       <img
         class="absolute pe-14 top-24 z-[-1] opacity-[0.03] lg:-top-2"
@@ -198,7 +198,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
       </div>
     </SectionContainer>
 
-    <SectionContainer class="py-56 pb-24 mx-0 w-screen relative" id="contact">
+    <SectionContainer class="py-56 pb-24 mx-0 relative md:w-screen" id="contact">
       <img
         class="absolute top-44 ms-8 z-[-1] opacity-[0.03] pe-16 lg:-top-2"
         src="images/CONTACTO.webp"
