@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente",
+    title: "Desarrollador Web en Freelance",
+    description:
+      "Desarrollo y mantenimiento de aplicaciones web. Actualmente, estoy trabajando en la creación de una aplicación web para comparar servicios de telefonía y ahorro energético llamada Negoco. Además, gestiono el mantenimiento y actualización de la web de la inmobiliaria RealtyMarket.",
+  },
+  {
+    date: "Fecha de las prácticas",
+    title: "Desarrollador Frontend en Prácticas en LucentiaLab",
+    description:
+      "Durante mis prácticas, desarrollé dos plantillas en Angular: una básica y otra en formato dashboard con diferentes aplicaciones web. Además, participé en el desarrollo de una aplicación móvil para el Concello de Santiago.",
+  },
+];
+---
+
+<div class="flex justify-center items-center">
+  <ol class="relative border-s border-gray-200 ml-2 lg:w-[778px]">
+    {
+      EXPERIENCE.map((experience) => (
+        <li class="mb-24 ms-4">
+          <ExperienceItem {...experience} />
+        </li>
+      ))
+    }
+  </ol>
+</div>
