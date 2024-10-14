@@ -31,7 +31,7 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
     <SectionContainer
       class="py-24 pb-24 mx-0 px-6 w-screen flex flex-col justify-center items-center flex-wrap"
     >
-      <div class="flex flex-col justify-center items-start ">
+      <div class="flex flex-col justify-center items-start">
         <img
           class="rounded-full size-14 mb-4 object-cover"
           src="images/profile-picture.webp"
@@ -42,7 +42,7 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
           font-bold flex flex-col justify-center items-start
           gap-x-4 pb-6 md:flex-row md:items-center"
         >
-          Pablo Rodríguez 
+          Pablo Rodríguez
           <a
             href="https://www.linkedin.com/in/pablorodriguezalbarran/"
             target="_blank"
@@ -53,9 +53,7 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
           </a>
         </h1>
         <h2 class="lg:text-2xl text-xl max-w-[700px] text-pretty">
-          <span class="text-yellow-200/90"
-            >Desarrollador web.</span
-          >
+          <span class="text-yellow-200/90">Desarrollador web.</span>
           <span class="text-red-200/90">Alicante, España.</span>
           <span class="opacity-75 text-pretty text-white">
             Especializado en desarrollo frontend con Angular y Astro, creo
@@ -105,10 +103,12 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
     >
       <div class="mb-20" data-aos="fade-in">
         <img
-          class="w-full absolute  -top-32 lg:-top-44 z-[-1] opacity-[0.03]"
+          class="w-full absolute -top-32 lg:-top-44 z-[-1] opacity-[0.03]"
           src="images/PROYECTOS.webp"
         />
-        <h2 class="text-6xl text-center mb-2 text-white">Bienvenido a mi Portfolio</h2>
+        <h2 class="text-6xl text-center mb-2 text-white">
+          Bienvenido a mi Portfolio
+        </h2>
         <p class="text-xl text-center text-gray-300/80">
           Este es mi portfolio personal, donde muestro mis proyectos y mi
           experiencia en el desarrollo web.
@@ -120,7 +120,7 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
           href="https://angular-template-omega.vercel.app/home"
           title="Angular Template"
           description="Plantilla de Angular con diseño responsive y animaciones."
-          image="/images/angular-template-mac.webp"
+          image="/images/angular-template-mac.png"
           data-aos="fade-up-left"
           data-aos-duration="1200"
           data-aos-delay="100"
@@ -132,7 +132,7 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
           href="https://angular-dashboard-six.vercel.app/dashboard"
           title="Angular Dashboard"
           description="Dashboard de Angular con gráficos y widgets personalizables."
-          image="/images/angular-dashboard-mac.webp"
+          image="/images/angular-dashboard-mac.png"
           data-aos="fade-up-right"
           data-aos-duration="1200"
           data-aos-delay="100"
@@ -144,7 +144,7 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
           href="https://negoco.vercel.app"
           title="Negoco"
           description="Comparador de Telefonía y Ahorro Energético."
-          image="/images/negoco-mac.webp"
+          image="/images/negoco-mac.png"
           data-aos="fade-up-left"
           data-aos-duration="1200"
           data-aos-delay="100"
@@ -155,24 +155,37 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
           <MongoDBIcon class="size-6" />
         </Project>
         <Project
-        href="https://pm-db.vercel.app/"
-        title="PMDB"
-        description="Base de datos de Películas y Series"
-        image="/images/pmdb_mac_img.webp"
-        data-aos="fade-up-right"
-        data-aos-duration="1200"
-        data-aos-delay="100"
+          href="https://pm-db.vercel.app/"
+          title="PMDB"
+          description="Base de datos de Películas y Series"
+          image="/images/pmdb_mac_img.png"
+          data-aos="fade-up-right"
+          data-aos-duration="1200"
+          data-aos-delay="100"
         >
-        <AstroIcon class="size-6"/>
-        <JavaScriptIcon class="size-6"/>
-        <TailwindIcon class="size-6"/>
+          <AstroIcon class="size-6" />
+          <JavaScriptIcon class="size-6" />
+          <TailwindIcon class="size-6" />
+        </Project>
+        <Project
+          href="https://asesoresmsl.com/"
+          title="Asesoría MSL"
+          description="Web corporativa para una asesoría fiscal y laboral."
+          image="/images/asesoria-mac.png"
+          data-aos="fade-up-right"
+          data-aos-duration="1200"
+          data-aos-delay="100"
+        >
+          <AstroIcon class="size-6" />
+          <JavaScriptIcon class="size-6" />
+          <TailwindIcon class="size-6" />
         </Project>
       </div>
     </SectionContainer>
 
     <SectionContainer
       id="about"
-      class="py-56 pb-24 relative mx-0  px-6 md:w-screen md:mx-0 min-h-screen"
+      class="py-56 pb-24 relative mx-0 px-6 md:w-screen md:mx-0 min-h-screen"
     >
       <img
         class="absolute pe-14 top-24 z-[-1] opacity-[0.03] lg:-top-2"
@@ -188,14 +201,18 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
           alt="pablo photo"
         />
         <div class="flex flex-col gap-10">
-          <h2 class="text-4xl font-semibold text-white">Conóceme un poco más</h2>
+          <h2 class="text-4xl font-semibold text-white">
+            Conóceme un poco más
+          </h2>
           <p class="text-lg text-gray-300/90 text-pretty">
             Soy Pablo Rodríguez, un desarrollador frontend especializado en
-            Angular, originario de Alicante, España. Poseo una sólida formación
-            académica, que incluye dos años de estudio en Diseño y Desarrollo de
-            Videojuegos en la Universidad Jaume I, y un Grado Superior en
+            Angular, de Alicante, España. Poseo una sólida formación académica,
+            que incluye dos años de estudio en Diseño y Desarrollo de
+            Videojuegos en la Universidad Jaume I, un Grado Superior en
             Administración de Sistemas Informáticos en Red con especialización
-            en Ciberseguridad, obtenido en iFP.
+            en Ciberseguridad, obtenido en iFP, un Bootcamp de
+            JavaScript/Typescript y actualmente cursando un Máster FrontEnd en
+            Lemoncode.
           </p>
           <p class="text-lg text-gray-300/90 text-pretty">
             Durante mis prácticas en LucentiaLab, trabajé como desarrollador
@@ -205,15 +222,18 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
           </p>
           <p class="text-lg text-gray-300/90 text-pretty">
             Tengo conocimientos en diversas tecnologías y herramientas como
-            NodeJS, Astro, MongoDB y SQL, lo que me permite abordar proyectos
-            con una perspectiva integral y enfocada en ofrecer soluciones
-            eficientes y de alta calidad.
+            Angular, Astro, Tailwind, Node.js y MongoDB lo que me permite
+            abordar proyectos con una perspectiva integral y enfocada en ofrecer
+            soluciones eficientes y de alta calidad.
           </p>
         </div>
       </div>
     </SectionContainer>
 
-    <SectionContainer class="py-56 pb-24 mx-0 relative md:w-screen" id="contact">
+    <SectionContainer
+      class="py-56 pb-24 mx-0 relative md:w-screen"
+      id="contact"
+    >
       <img
         class="absolute top-44 ms-8 z-[-1] opacity-[0.03] pe-16 lg:-top-2"
         src="images/CONTACTO.webp"
