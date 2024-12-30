@@ -79,7 +79,7 @@ const ProjectGrid: React.FC = () => {
   return (
     <div className="glide group/glide !overflow-visible pe-44">
       <div className="glide__track !overflow-visible" data-glide-el="track">
-        <ul className="glide__slides !overflow-visible  !items-stretch md:!py-8">
+        <ul className="glide__slides !overflow-visible  !items-stretch md:!py-8 !flex">
           {projects.map((project, index) => (
             <li className="glide__slide" key={index}>
               <Project
@@ -96,7 +96,7 @@ const ProjectGrid: React.FC = () => {
       <div className="glide__arrows" data-glide-el="controls">
         <button
           className="
-        glide__arrow glide__arrow--left absolute top-1/2 left-4 transform -translate-y-1/2 p-2 rounded-full bg-white opacity-10 text-black shadow-md  group-hover/glide:opacity-100 transition-opacity duration-300 ease-in-out"
+        glide__arrow glide__arrow--left absolute top-0 left-4 transform -translate-y-1/2 p-2 rounded-full bg-white opacity-10 text-black shadow-md  group-hover/glide:opacity-100 transition-opacity duration-300 ease-in-out"
           data-glide-dir="<"
         >
           <svg
@@ -116,7 +116,7 @@ const ProjectGrid: React.FC = () => {
           </svg>
         </button>
         <button
-          className="glide__arrow glide__arrow--right  absolute top-1/2 right-4 transform -translate-y-1/2 p-2 rounded-full bg-white opacity-10 text-black shadow-md group-hover/glide:opacity-100 transition-opacity duration-300 ease-in-out"
+          className="glide__arrow glide__arrow--right  absolute top-0 right-4 transform -translate-y-1/2 p-2 rounded-full bg-white opacity-10 text-black shadow-md group-hover/glide:opacity-100 transition-opacity duration-300 ease-in-out"
           data-glide-dir=">"
         >
           <svg
