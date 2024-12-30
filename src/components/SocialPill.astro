@@ -1,3 +1,11 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
 <a
   class={`
   bg-white/5
@@ -8,7 +16,7 @@
   transition-transform duration-200
   hover:scale-105 hover:bg-white/10
   `}
-  {...Astro.props}
+  href={href}
   target="_blank"
   rel="noopener noreferrer"
 >
