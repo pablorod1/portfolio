@@ -57,13 +57,8 @@ const Project = ({ title, description, image, link, icons }: ProjectProps) => {
 };
 
 const ProjectGrid: React.FC = () => {
-  const glideRef = React.useRef<Glide | null>(null);
   React.useEffect(() => {
     const initializeGlide = () => {
-      if (glideRef.current) {
-        glideRef.current.destroy();
-      }
-
       const glideInstance = new Glide(".glide", {
         type: "slider",
         perView: 2,
@@ -75,20 +70,10 @@ const ProjectGrid: React.FC = () => {
         },
       });
 
-      requestAnimationFrame(() => {
-        glideInstance.mount();
-        glideRef.current = glideInstance;
-      });
+      glideInstance.mount();
     };
 
     initializeGlide();
-
-    return () => {
-      if (glideRef.current) {
-        glideRef.current.destroy();
-        glideRef.current = null;
-      }
-    };
   }, []);
 
   return (
