@@ -109,7 +109,9 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
         </p>
       </div>
 
-      <ProjectGrid client:only="react" />
+      <div class="w-full">
+        <ProjectGrid client:load />
+      </div>
     </SectionContainer>
 
     <SectionContainer
