@@ -1,7 +1,7 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
 
-const EXPERIENCE = [
+const experiences = [
   {
     date: "Actualmente",
     title: "Desarrollador Web FrontEnd en SkyT3L",
@@ -32,7 +32,7 @@ const EXPERIENCE = [
 <div class="flex justify-center items-center">
   <ol class="relative border-s border-gray-200 ml-2 lg:w-[778px]">
     {
-      EXPERIENCE.map((experience) => (
+      experiences.map((experience) => (
         <li class="mb-24 ms-4">
           <ExperienceItem {...experience} />
         </li>

@@ -4,23 +4,16 @@ import SectionContainer from "../components/SectionContainer.astro";
 
 import Badge from "../components/Badge.astro";
 import SocialPill from "../components/SocialPill.astro";
-import Project from "../components/Project.astro";
+import ProjectGrid from "../components/ProjectGrid";
 import Card from "../components/Card.astro";
 
 import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 import MailIcon from "../icons/MailIcon.astro";
 import ChevronDownIcon from "../icons/ChevronDownIcon.astro";
-import MongoDBIcon from "../icons/MongoDBIcon.astro";
-import AngularIcon from "../icons/AngularIcon.astro";
-import BootstrapIcon from "../icons/BootstrapIcon.astro";
-import JavaScriptIcon from "../icons/JavaScriptIcon.astro";
 
-import "aos/dist/aos.css";
 import Experience from "../components/Experience.astro";
 import PhoneIcon from "../icons/PhoneIcon.astro";
-import AstroIcon from "../icons/AstroIcon.astro";
-import TailwindIcon from "../icons/TailwindIcon.astro";
 ---
 
 <Layout
@@ -115,72 +108,7 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-32">
-        <Project
-          href="https://angular-template-omega.vercel.app/home"
-          title="Angular Template"
-          description="Plantilla de Angular con diseño responsive y animaciones."
-          image="/images/angular-template-mac.png"
-          data-aos="fade-up-left"
-          data-aos-duration="1200"
-          data-aos-delay="100"
-        >
-          <AngularIcon class="size-6" />
-          <BootstrapIcon class="size-6" />
-        </Project>
-        <Project
-          href="https://angular-dashboard-six.vercel.app/dashboard"
-          title="Angular Dashboard"
-          description="Dashboard de Angular con gráficos y widgets personalizables."
-          image="/images/angular-dashboard-mac.png"
-          data-aos="fade-up-right"
-          data-aos-duration="1200"
-          data-aos-delay="100"
-        >
-          <AngularIcon class="size-6" />
-          <BootstrapIcon class="size-6" />
-        </Project>
-        <Project
-          href="https://negoco.vercel.app"
-          title="Negoco"
-          description="Comparador de Telefonía y Ahorro Energético."
-          image="/images/negoco-mac.png"
-          data-aos="fade-up-left"
-          data-aos-duration="1200"
-          data-aos-delay="100"
-        >
-          <AngularIcon class="size-6" />
-          <img class="size-6" src="images/nodejs.webp" alt="" />
-          <JavaScriptIcon class="size-6" />
-          <MongoDBIcon class="size-6" />
-        </Project>
-        <Project
-          href="https://pm-db.vercel.app/"
-          title="PMDB"
-          description="Base de datos de Películas y Series"
-          image="/images/pmdb_mac_img.png"
-          data-aos="fade-up-right"
-          data-aos-duration="1200"
-          data-aos-delay="100"
-        >
-          <AstroIcon class="size-6" />
-          <JavaScriptIcon class="size-6" />
-          <TailwindIcon class="size-6" />
-        </Project>
-        <Project
-          href="https://asesoresmsl.com/"
-          title="Asesoría MSL"
-          description="Web corporativa para una asesoría fiscal y laboral."
-          image="/images/asesoria-mac.png"
-          data-aos="fade-up-right"
-          data-aos-duration="1200"
-          data-aos-delay="100"
-        >
-          <AstroIcon class="size-6" />
-          <JavaScriptIcon class="size-6" />
-          <TailwindIcon class="size-6" />
-        </Project>
-      </div>
+      <ProjectGrid client:only="react" />
     </SectionContainer>
 
     <SectionContainer
@@ -191,42 +119,31 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
         class="absolute pe-14 top-24 z-[-1] opacity-[0.03] lg:-top-2"
         src="images/sobremi-text.webp"
       />
-      <div
-        class="flex flex-col justify-center items-center gap-20 lg:flex-row max-w-7xl mx-auto"
-      >
-        <img
-          class="rounded-full mb-4 object-cover w-min aspect-square
-          animate-float"
-          src="images/profile-picture.webp"
-          alt="pablo photo"
-        />
-        <div class="flex flex-col gap-10">
-          <h2 class="text-4xl font-semibold text-white">
-            Conóceme un poco más
-          </h2>
-          <p class="text-lg text-gray-300/90 text-pretty">
-            Soy Pablo Rodríguez, desarrollador frontend de Alicante, España, con
-            una formación sólida que incluye un Grado Superior en Administración
-            de Sistemas Informáticos en Red con especialización en
-            Ciberseguridad, un Bootcamp en JavaScript/TypeScript y actualmente
-            el Máster Frontend de Lemoncode.
-          </p>
-          <p class="text-lg text-gray-300/90 text-pretty">
-            He trabajado en proyectos variados, como una aplicación móvil en
-            Ionic para el Concello de Santiago durante mis prácticas en
-            LucentiaLab, una plataforma de comparación de servicios en Negoco
-            utilizando Angular y Node.js, y una página informativa para Asesoría
-            Mari Carmen Sánchez Lucas desarrollada con Astro y TailwindCSS.
-            Actualmente, formo parte del equipo de SkyT3L, donde contribuyo al
-            mantenimiento y optimización de la web de la empresa.
-          </p>
-          <p class="text-lg text-gray-300/90 text-pretty">
-            Como desarrollador frontend, aporto un enfoque en la eficiencia, la
-            escalabilidad y el diseño centrado en el usuario. Mi objetivo es
-            ofrecer soluciones innovadoras y bien estructuradas que mejoren la
-            experiencia del usuario y optimicen el rendimiento de cada proyecto.
-          </p>
-        </div>
+
+      <div class="flex flex-col gap-10 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-semibold text-white">Conóceme un poco más</h2>
+        <p class="text-lg text-gray-300/90 text-pretty">
+          Soy Pablo Rodríguez, desarrollador frontend de Alicante, España, con
+          una formación sólida que incluye un Grado Superior en Administración
+          de Sistemas Informáticos en Red con especialización en Ciberseguridad,
+          un Bootcamp en JavaScript/TypeScript y actualmente el Máster Frontend
+          de Lemoncode.
+        </p>
+        <p class="text-lg text-gray-300/90 text-pretty">
+          He trabajado en proyectos variados, como una aplicación móvil en Ionic
+          para el Concello de Santiago durante mis prácticas en LucentiaLab, una
+          plataforma de comparación de servicios en Negoco utilizando Angular y
+          Node.js, y una página informativa para Asesoría Mari Carmen Sánchez
+          Lucas desarrollada con Astro y TailwindCSS. Actualmente, formo parte
+          del equipo de SkyT3L, donde contribuyo al mantenimiento y optimización
+          de la web de la empresa.
+        </p>
+        <p class="text-lg text-gray-300/90 text-pretty">
+          Como desarrollador frontend, aporto un enfoque en la eficiencia, la
+          escalabilidad y el diseño centrado en el usuario. Mi objetivo es
+          ofrecer soluciones innovadoras y bien estructuradas que mejoren la
+          experiencia del usuario y optimicen el rendimiento de cada proyecto.
+        </p>
       </div>
     </SectionContainer>
 
