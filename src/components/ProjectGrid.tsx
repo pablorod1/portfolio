@@ -77,7 +77,7 @@ const ProjectGrid: React.FC = () => {
   }, []);
 
   return (
-    <div className="glide group/glide !overflow-visible pe-44">
+    <div className="glide group/glide !overflow-visible pe-44 relative">
       <div className="glide__track !overflow-visible" data-glide-el="track">
         <ul className="glide__slides !overflow-visible  !items-stretch md:!py-8 !flex">
           {projects.map((project, index) => (
