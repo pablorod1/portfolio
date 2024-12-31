@@ -31,21 +31,21 @@ const Project = ({ title, description, image, link, icons }: ProjectProps) => {
         </h3>
 
         {/* Información adicional que aparece al hacer hover */}
-        <div className="h-transition flex items-center justify-between h-0 overflow-hidden group-hover:h-auto transition-all duration-400 ease-in">
+        <div className="h-transition flex flex-col gap-y-4 items-start lg:flex-row lg:items-center lg:justify-between h-0 overflow-hidden group-hover:h-auto transition-all duration-400 ease-in">
           <p className="text-white text-sm md:text-lg text-balance">
             {description}
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 lg:gap-6">
             {icons.map((icon, index) => (
-              <div key={index} className="w-8 h-8">
-                {icon === "nodejs" ? (
-                  <img
-                    className="size-8"
-                    src="/images/nodejs.webp"
-                    alt="Node.js"
-                  />
+              <div key={index} className="size-4 md:size-6 lg:size-8">
+                {Icons[icon] ? (
+                  Icons[icon]({ className: "size-4 md:size-6 lg:size-8" })
                 ) : (
-                  Icons[icon]
+                  <img
+                    src="/images/nodejs.webp"
+                    alt=""
+                    className="size-4 md:size-6 lg:size-8"
+                  />
                 )}
               </div>
             ))}
@@ -66,7 +66,7 @@ const ProjectGrid: React.FC = () => {
         startAt: 0,
         gap: 30,
         breakpoints: {
-          1024: { perView: 1 },
+          1200: { perView: 1 },
         },
       });
 
@@ -77,7 +77,7 @@ const ProjectGrid: React.FC = () => {
   }, []);
 
   return (
-    <div className="glide group/glide !overflow-visible pe-44 relative">
+    <div className="glide group/glide !overflow-visible lg:pe-44 relative">
       <div className="glide__track !overflow-visible" data-glide-el="track">
         <ul className="glide__slides !overflow-visible  !items-stretch md:!py-8 !flex">
           {projects.map((project, index) => (
@@ -93,7 +93,7 @@ const ProjectGrid: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className="glide__arrows" data-glide-el="controls">
+      <div className="hidden lg:block glide__arrows" data-glide-el="controls">
         <button
           className="
         glide__arrow glide__arrow--left absolute top-1/2 left-4 transform -translate-y-1/2 p-2 rounded-full bg-white opacity-10 text-black shadow-md  group-hover/glide:opacity-100 transition-opacity duration-300 ease-in-out"
@@ -101,8 +101,8 @@ const ProjectGrid: React.FC = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -121,8 +121,8 @@ const ProjectGrid: React.FC = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

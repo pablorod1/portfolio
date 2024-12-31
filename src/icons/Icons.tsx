@@ -1,13 +1,12 @@
-import { type JSX } from "react";
+import React, { type JSX } from "react";
 
-export const Icons: { [key: string]: JSX.Element } = {
-  angular: (
+export const Icons = {
+  angular: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 242 256"
-      width={32}
-      height={32}
+      {...props}
     >
       <g clipPath="url(#a)">
         <mask
@@ -67,13 +66,12 @@ export const Icons: { [key: string]: JSX.Element } = {
       </defs>
     </svg>
   ),
-  astro: (
+  astro: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       viewBox="0 0 256 366"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      width={32}
-      height={32}
+      {...props}
     >
       <path
         fill="#fff"
@@ -85,12 +83,11 @@ export const Icons: { [key: string]: JSX.Element } = {
       />
     </svg>
   ),
-  bootstrap: (
+  bootstrap: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       viewBox="0 0 256 204"
       xmlns="http://www.w3.org/2000/svg"
-      width={32}
-      height={32}
+      {...props}
       preserveAspectRatio="xMidYMid"
     >
       <path
@@ -99,13 +96,8 @@ export const Icons: { [key: string]: JSX.Element } = {
       />
     </svg>
   ),
-  javascript: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={32}
-      height={32}
-      viewBox="0 0 1052 1052"
-    >
+  javascript: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" {...props} viewBox="0 0 1052 1052">
       <path fill="#f0db4f" d="M0 0h1052v1052H0z" />
       <path
         d="M965.9 801.1c-7.7-48-39-88.3-131.7-125.9-32.2-14.8-68.1-25.399-78.8-49.8-3.8-14.2-4.3-22.2-1.9-30.8 6.9-27.9 40.2-36.6 66.6-28.6 17 5.7 33.1 18.801 42.8 39.7 45.4-29.399 45.3-29.2 77-49.399-11.6-18-17.8-26.301-25.4-34-27.3-30.5-64.5-46.2-124-45-10.3 1.3-20.699 2.699-31 4-29.699 7.5-58 23.1-74.6 44-49.8 56.5-35.6 155.399 25 196.1 59.7 44.8 147.4 55 158.6 96.9 10.9 51.3-37.699 67.899-86 62-35.6-7.4-55.399-25.5-76.8-58.4-39.399 22.8-39.399 22.8-79.899 46.1 9.6 21 19.699 30.5 35.8 48.7 76.2 77.3 266.899 73.5 301.1-43.5 1.399-4.001 10.6-30.801 3.199-72.101zm-394-317.6h-98.4c0 85-.399 169.4-.399 254.4 0 54.1 2.8 103.7-6 118.9-14.4 29.899-51.7 26.2-68.7 20.399-17.3-8.5-26.1-20.6-36.3-37.699-2.8-4.9-4.9-8.7-5.601-9-26.699 16.3-53.3 32.699-80 49 13.301 27.3 32.9 51 58 66.399 37.5 22.5 87.9 29.4 140.601 17.3 34.3-10 63.899-30.699 79.399-62.199 22.4-41.3 17.6-91.3 17.4-146.6.5-90.2 0-180.4 0-270.9z"
@@ -113,12 +105,11 @@ export const Icons: { [key: string]: JSX.Element } = {
       />
     </svg>
   ),
-  mongodb: (
+  mongodb: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       viewBox="0 0 256 549"
       xmlns="http://www.w3.org/2000/svg"
-      width={32}
-      height={32}
+      {...props}
       preserveAspectRatio="xMidYMid"
     >
       <path
@@ -127,88 +118,11 @@ export const Icons: { [key: string]: JSX.Element } = {
       />
     </svg>
   ),
-  nodejs: (
-    <svg
-      viewBox="0 0 256 292"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      width={32}
-      height={32}
-    >
-      <defs>
-        <linearGradient
-          id="a"
-          x1="68.188%"
-          x2="27.823%"
-          y1="17.487%"
-          y2="89.755%"
-        >
-          <stop offset="0%" stop-color="#41873F" />
-          <stop offset="32.88%" stop-color="#418B3D" />
-          <stop offset="63.52%" stop-color="#419637" />
-          <stop offset="93.19%" stop-color="#3FA92D" />
-          <stop offset="100%" stop-color="#3FAE2A" />
-        </linearGradient>
-        <linearGradient
-          id="c"
-          x1="43.277%"
-          x2="159.245%"
-          y1="55.169%"
-          y2="-18.306%"
-        >
-          <stop offset="13.76%" stop-color="#41873F" />
-          <stop offset="40.32%" stop-color="#54A044" />
-          <stop offset="71.36%" stop-color="#66B848" />
-          <stop offset="90.81%" stop-color="#6CC04A" />
-        </linearGradient>
-        <linearGradient
-          id="f"
-          x1="-4.389%"
-          x2="101.499%"
-          y1="49.997%"
-          y2="49.997%"
-        >
-          <stop offset="9.192%" stop-color="#6CC04A" />
-          <stop offset="28.64%" stop-color="#66B848" />
-          <stop offset="59.68%" stop-color="#54A044" />
-          <stop offset="86.24%" stop-color="#41873F" />
-        </linearGradient>
-        <path
-          id="b"
-          d="M134.923 1.832c-4.344-2.443-9.502-2.443-13.846 0L6.787 67.801C2.443 70.244 0 74.859 0 79.745v132.208c0 4.887 2.715 9.502 6.787 11.945l114.29 65.968c4.344 2.444 9.502 2.444 13.846 0l114.29-65.968c4.344-2.443 6.787-7.058 6.787-11.945V79.745c0-4.886-2.715-9.501-6.787-11.944L134.923 1.832Z"
-        />
-        <path
-          id="e"
-          d="M134.923 1.832c-4.344-2.443-9.502-2.443-13.846 0L6.787 67.801C2.443 70.244 0 74.859 0 79.745v132.208c0 4.887 2.715 9.502 6.787 11.945l114.29 65.968c4.344 2.444 9.502 2.444 13.846 0l114.29-65.968c4.344-2.443 6.787-7.058 6.787-11.945V79.745c0-4.886-2.715-9.501-6.787-11.944L134.923 1.832Z"
-        />
-      </defs>
-      <path
-        fill="url(#a)"
-        d="M134.923 1.832c-4.344-2.443-9.502-2.443-13.846 0L6.787 67.801C2.443 70.244 0 74.859 0 79.745v132.208c0 4.887 2.715 9.502 6.787 11.945l114.29 65.968c4.344 2.444 9.502 2.444 13.846 0l114.29-65.968c4.344-2.443 6.787-7.058 6.787-11.945V79.745c0-4.886-2.715-9.501-6.787-11.944L134.923 1.832Z"
-      />
-      <mask id="d" fill="#fff">
-        <use xlinkHref="#b" />
-      </mask>
-      <path
-        fill="url(#c)"
-        d="M249.485 67.8 134.65 1.833c-1.086-.542-2.443-1.085-3.529-1.357L2.443 220.912c1.086 1.357 2.444 2.443 3.8 3.258l114.834 65.968c3.258 1.9 7.059 2.443 10.588 1.357L252.47 70.515c-.815-1.086-1.9-1.9-2.986-2.714Z"
-        mask="url(#d)"
-      />
-      <mask id="g" fill="#fff">
-        <use xlinkHref="#e" />
-      </mask>
-      <path
-        fill="url(#f)"
-        d="M249.756 223.898c3.258-1.9 5.701-5.158 6.787-8.687L130.579.204c-3.258-.543-6.787-.272-9.773 1.628L6.786 67.53l122.979 224.238c1.628-.272 3.529-.815 5.158-1.63l114.833-66.239Z"
-        mask="url(#g)"
-      />
-    </svg>
-  ),
-  tailwind: (
+
+  tailwind: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       viewBox="0 0 256 154"
-      width={32}
-      height={32}
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
     >
@@ -230,11 +144,10 @@ export const Icons: { [key: string]: JSX.Element } = {
       />
     </svg>
   ),
-  firebase: (
+  firebase: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={32}
-      height={32}
+      {...props}
       fill="none"
       viewBox="0 0 600 600"
     >
