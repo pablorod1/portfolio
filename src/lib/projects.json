@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "title": "Asesoría MSL",
+      "description": "Web corporativa para una asesoría fiscal y laboral.",
+      "image": "/images/asesoria.avif",
+      "href": "https://asesoresmsl.com/",
+      "technologies": ["astro", "javascript", "tailwind", "firebase"]
+    },
+    {
+      "title": "Beenergy Landing Page",
+      "description": "Landing page para una consultoría de energía.",
+      "image": "/images/beenergy.avif",
+      "href": "https://beenergy.vercel.app/",
+      "technologies": ["astro", "javascript", "tailwind"]
+    },
+    {
+      "title": "Negoco",
+      "description": "Comparador de Telefonía y Ahorro Energético.",
+      "image": "/images/negoco.avif",
+      "href": "https://negoco.vercel.app",
+      "technologies": ["angular", "nodejs", "javascript", "mongodb"]
+    },
+    {
+      "title": "PMDB",
+      "description": "Base de datos de Películas y Series",
+      "image": "/images/pmdb.avif",
+      "href": "https://pm-db.vercel.app/",
+      "technologies": ["astro", "javascript", "tailwind"]
+    },
+    {
+      "title": "Angular Template",
+      "description": "Plantilla de Angular con diseño responsive y animaciones.",
+      "image": "/images/angular-template.webp",
+      "href": "https://angular-template-omega.vercel.app/home",
+      "technologies": ["angular", "bootstrap"]
+    },
+    {
+      "title": "Angular Dashboard",
+      "description": "Dashboard de Angular con gráficos y widgets personalizables.",
+      "image": "/images/angular-dashboard.webp",
+      "href": "https://angular-dashboard-six.vercel.app/dashboard",
+      "technologies": ["angular", "bootstrap"]
+    }
+  ]
+}
