@@ -15,12 +15,20 @@
       "technologies": ["astro", "javascript", "tailwind"]
     },
     {
+      "title": "Realty Market",
+      "description": "Marketplace de compra y alquiler de inmuebles.",
+      "image": "/images/realty.webp",
+      "href": "https://realtymarket.vercel.app/",
+      "technologies": ["angular", "nodejs", "javascript", "mongodb"]
+    },
+    {
       "title": "Negoco",
       "description": "Comparador de Telefonía y Ahorro Energético.",
       "image": "/images/negoco.avif",
       "href": "https://negoco.vercel.app",
       "technologies": ["angular", "nodejs", "javascript", "mongodb"]
     },
+
     {
       "title": "PMDB",
       "description": "Base de datos de Películas y Series",
