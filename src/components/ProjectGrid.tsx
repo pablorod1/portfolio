@@ -1,6 +1,6 @@
 import projectsData from "../lib/projects.json";
 const { projects } = projectsData;
-import React from "react";
+import type React from "react";
 import { Icons } from "../icons/Icons";
 
 // Utilidad para obtener proyectos o fallback vacío
@@ -25,13 +25,12 @@ const BentoProjectCard: React.FC<{
     className={`
       relative flex flex-col overflow-hidden rounded-3xl shadow-xl border border-neutral-200 dark:border-neutral-800 h-full
       group transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl bg-white/90 dark:bg-neutral-900/90
-      ${highlight ? "row-span-2 col-span-2" : ""}
       ${className}
     `}
   >
-    <div className="relative w-full h-40 md:h-48 lg:h-64 overflow-hidden">
+    <div className="relative w-full h-64 overflow-hidden">
       <img
-        src={project.image}
+        src={project.image || "/placeholder.svg"}
         alt={project.title}
         className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
@@ -88,76 +87,56 @@ const BentoProjectCard: React.FC<{
 );
 
 const ProjectGrid: React.FC = () => {
-  // Índices según prioridad:
-  // 0: Negoco Cloud (P1)
-  // 1: Asesoría MSL (P1)
-  // 2: Beenergy (P2)
-  // 3: Realty Market (P2)
-  // 4: Negoco (P2)
-  // 5: PMDB (P2)
-  // 6: Angular Template (P3)
-  // 7: Angular Dashboard (P3)
   return (
-    <section className="w-full py-12 ">
-      {/* <div className="max-w-7xl mx-auto px-4 mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 dark:text-blue-300 mb-2">
-          Mis Proyectos
-        </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-lg max-w-2xl">
-          Un vistazo a mis trabajos recientes, presentados en un bento grid
-          único y moderno.
-        </p>
-      </div> */}
+    <section className="w-full py-12">
       <div
         className="
           grid
           grid-cols-1
           sm:grid-cols-2
-          lg:grid-cols-4
-          grid-rows-3
+          xl:grid-cols-4
           gap-6
           auto-rows-[180px]
-          md:auto-rows-[220px]
-          lg:auto-rows-[200px]
+          lg:auto-rows-[220px]
           max-w-7xl
           mx-auto
-          px-2
+          px-4
         "
-        style={{ gridAutoFlow: "dense" }}
       >
-        {/* Prioridad 1: Negoco Cloud (grande, destacado) */}
-        <div className="row-span-1 col-span-3">
+        {/* Proyecto destacado 1: Negoco Cloud */}
+        <div className="col-span-1 sm:col-span-2 xl:col-span-3 row-span-2">
           <BentoProjectCard project={getProject(0)} highlight />
         </div>
-        <div>
+
+        {/* Proyecto normal */}
+        <div className="col-span-1 row-span-2">
           <BentoProjectCard project={getProject(5)} />
         </div>
 
-        {/* Prioridad 2: Beenergy (mediano) */}
-        <div className="row-span-1 col-span-1">
+        {/* Proyecto normal */}
+        <div className="col-span-1 row-span-2">
           <BentoProjectCard project={getProject(2)} />
         </div>
 
-        {/* Prioridad 1: Asesoría MSL (grande, destacado) */}
-        <div className="row-span-1 col-span-3 col-start-2">
+        {/* Proyecto destacado 2: Asesoría MSL */}
+        <div className="col-span-1 sm:col-span-2 xl:col-span-3 row-span-2">
           <BentoProjectCard project={getProject(1)} highlight />
         </div>
-        {/* Prioridad 2: Realty Market (mediano) */}
-        <div className="row-span-1 col-span-1">
+
+        {/* Proyectos normales */}
+        <div className="col-span-1 row-span-2">
           <BentoProjectCard project={getProject(3)} />
         </div>
-        {/* Prioridad 2: Negoco (mediano) */}
-        <div className="row-span-1 col-span-1">
+
+        <div className="col-span-1 row-span-2">
           <BentoProjectCard project={getProject(4)} />
         </div>
-        {/* Prioridad 2: PMDB (mediano) */}
 
-        {/* Prioridad 3: Angular Template (pequeño) */}
-        <div className="row-span-1 col-span-1">
+        <div className="col-span-1 row-span-2">
           <BentoProjectCard project={getProject(6)} />
         </div>
-        {/* Prioridad 3: Angular Dashboard (pequeño) */}
-        <div className="row-span-1 col-span-1">
+
+        <div className="col-span-1 row-span-2">
           <BentoProjectCard project={getProject(7)} />
         </div>
       </div>
