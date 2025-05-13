@@ -1,142 +1,168 @@
 import projectsData from "../lib/projects.json";
 const { projects } = projectsData;
 import React from "react";
-import Glide from "@glidejs/glide";
 import { Icons } from "../icons/Icons";
 
-interface ProjectProps {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  icons: string[];
-}
+// Utilidad para obtener proyectos o fallback vacío
+const getProject = (idx: number) =>
+  projects[idx] || {
+    title: "",
+    description: "",
+    image: "",
+    href: "#",
+    technologies: [],
+  };
 
-const Project = ({ title, description, image, link, icons }: ProjectProps) => {
-  return (
-    <a
-      href={link}
-      className="relative overflow-hidden group rounded-lg flex flex-col h-full w-full shadow-[2px_4px_12px_rgba(0,0,0,0.14)]  hover:shadow-[2px_4px_16px_rgba(0,0,0,0.16)] transition-all duration-300 cubic-bezier(0,0,0.5,1)"
-    >
+const BentoProjectCard: React.FC<{
+  project: (typeof projects)[0];
+  className?: string;
+  highlight?: boolean;
+}> = ({ project, className = "", highlight = false }) => (
+  <a
+    href={project.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`
+      relative flex flex-col overflow-hidden rounded-3xl shadow-xl border border-neutral-200 dark:border-neutral-800 h-full
+      group transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl bg-white/90 dark:bg-neutral-900/90
+      ${highlight ? "row-span-2 col-span-2" : ""}
+      ${className}
+    `}
+  >
+    <div className="relative w-full h-40 md:h-48 lg:h-64 overflow-hidden">
       <img
-        className="w-full h-full rounded-lg object-cover group-hover:blur-[1px] group-hover:brightness-50 transition-all duration-300 cubic-bezier(0,0,0.5,1)"
-        src={image}
-        alt={title}
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
       />
-      <div className="absolute bottom-0 left-0 w-full  bg-gradient-to-t from-black/90 to-transparent p-4 pt-8 pb-0 group-hover:pb-6 flex flex-col transition-all duration-300 cubic-bezier(0,0,0.5,1)">
-        {/* Título siempre visible */}
-
-        <h3 className="text-white text-lg md:text-3xl font-semibold text-balance mb-4 group-hover:mb-0 transition-all duration-300 cubic-bezier(0,0,0.5,1)">
-          {title}
-        </h3>
-
-        {/* Información adicional que aparece al hacer hover */}
-        <div className="h-transition flex flex-col gap-y-4 items-start lg:flex-row lg:items-center lg:justify-between h-0 overflow-hidden group-hover:h-auto transition-all duration-400 ease-in">
-          <p className="text-white text-sm md:text-lg text-balance">
-            {description}
-          </p>
-          <div className="flex items-center gap-4 lg:gap-6">
-            {icons.map((icon, index) => (
-              <div key={index} className="size-4 md:size-6 lg:size-8">
-                {Icons[icon] ? (
-                  Icons[icon]({ className: "size-4 md:size-6 lg:size-8" })
-                ) : (
-                  <img
-                    src="/images/nodejs.webp"
-                    alt=""
-                    className="size-4 md:size-6 lg:size-8"
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </a>
-  );
-};
-
-const ProjectGrid: React.FC = () => {
-  React.useEffect(() => {
-    const initializeGlide = () => {
-      const glideInstance = new Glide(".glide", {
-        type: "slider",
-        perView: 2,
-        focusAt: 0,
-        startAt: 0,
-        gap: 30,
-        breakpoints: {
-          1200: { perView: 1 },
-        },
-      });
-
-      glideInstance.mount();
-    };
-
-    initializeGlide();
-  }, []);
-
-  return (
-    <div className="glide group/glide !overflow-visible lg:pe-44 relative">
-      <div className="glide__track !overflow-visible" data-glide-el="track">
-        <ul className="glide__slides !overflow-visible  !items-stretch md:!py-8 !flex">
-          {projects.map((project, index) => (
-            <li className="glide__slide" key={index}>
-              <Project
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                link={project.href}
-                icons={project.technologies}
+      {highlight && (
+        <span className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs px-4 py-1 rounded-full font-bold shadow-lg">
+          Destacado
+        </span>
+      )}
+    </div>
+    <div className="flex-1 flex flex-col gap-2 p-5">
+      <h3
+        className={`font-bold ${
+          highlight ? "text-2xl" : "text-lg"
+        } text-neutral-900 dark:text-white`}
+      >
+        {project.title}
+      </h3>
+      <p
+        className={`text-neutral-700 dark:text-neutral-300 ${
+          highlight ? "text-base" : "text-sm"
+        } line-clamp-3`}
+      >
+        {project.description}
+      </p>
+      <div className="flex flex-wrap gap-2 mt-auto">
+        {project.technologies.map((icon: string, idx: number) => (
+          <span
+            key={idx}
+            className="inline-flex items-center justify-center bg-blue-100 dark:bg-blue-900/40 rounded-lg p-1 shadow-sm"
+            style={{ minWidth: 28, minHeight: 28 }}
+          >
+            {Icons[icon] ? (
+              Icons[icon]({
+                className: "size-5 md:size-6 text-blue-700 dark:text-blue-200",
+              })
+            ) : (
+              <img
+                src="/images/nodejs.webp"
+                alt=""
+                className="size-5 md:size-6"
               />
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="hidden lg:block glide__arrows" data-glide-el="controls">
-        <button
-          className="
-        glide__arrow glide__arrow--left absolute top-1/2 left-4 transform -translate-y-1/2 p-2 rounded-full bg-white opacity-10 text-black shadow-md  group-hover/glide:opacity-100 transition-opacity duration-300 ease-in-out"
-          data-glide-dir="<"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M15 6l-6 6l6 6" />
-          </svg>
-        </button>
-        <button
-          className="glide__arrow glide__arrow--right  absolute top-1/2 right-4 transform -translate-y-1/2 p-2 rounded-full bg-white opacity-10 text-black shadow-md group-hover/glide:opacity-100 transition-opacity duration-300 ease-in-out"
-          data-glide-dir=">"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M9 6l6 6l-6 6" />
-          </svg>
-        </button>
+            )}
+          </span>
+        ))}
       </div>
     </div>
+    <span className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full shadow font-semibold text-xs md:text-sm hover:scale-105 transition-transform">
+        Ver proyecto
+      </button>
+    </span>
+  </a>
+);
+
+const ProjectGrid: React.FC = () => {
+  // Índices según prioridad:
+  // 0: Negoco Cloud (P1)
+  // 1: Asesoría MSL (P1)
+  // 2: Beenergy (P2)
+  // 3: Realty Market (P2)
+  // 4: Negoco (P2)
+  // 5: PMDB (P2)
+  // 6: Angular Template (P3)
+  // 7: Angular Dashboard (P3)
+  return (
+    <section className="w-full py-12 ">
+      {/* <div className="max-w-7xl mx-auto px-4 mb-10">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 dark:text-blue-300 mb-2">
+          Mis Proyectos
+        </h2>
+        <p className="text-neutral-700 dark:text-neutral-300 text-lg max-w-2xl">
+          Un vistazo a mis trabajos recientes, presentados en un bento grid
+          único y moderno.
+        </p>
+      </div> */}
+      <div
+        className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          grid-rows-3
+          gap-6
+          auto-rows-[180px]
+          md:auto-rows-[220px]
+          lg:auto-rows-[200px]
+          max-w-7xl
+          mx-auto
+          px-2
+        "
+        style={{ gridAutoFlow: "dense" }}
+      >
+        {/* Prioridad 1: Negoco Cloud (grande, destacado) */}
+        <div className="row-span-1 col-span-3">
+          <BentoProjectCard project={getProject(0)} highlight />
+        </div>
+        <div>
+          <BentoProjectCard project={getProject(5)} />
+        </div>
+
+        {/* Prioridad 2: Beenergy (mediano) */}
+        <div className="row-span-1 col-span-1">
+          <BentoProjectCard project={getProject(2)} />
+        </div>
+
+        {/* Prioridad 1: Asesoría MSL (grande, destacado) */}
+        <div className="row-span-1 col-span-3 col-start-2">
+          <BentoProjectCard project={getProject(1)} highlight />
+        </div>
+        {/* Prioridad 2: Realty Market (mediano) */}
+        <div className="row-span-1 col-span-1">
+          <BentoProjectCard project={getProject(3)} />
+        </div>
+        {/* Prioridad 2: Negoco (mediano) */}
+        <div className="row-span-1 col-span-1">
+          <BentoProjectCard project={getProject(4)} />
+        </div>
+        {/* Prioridad 2: PMDB (mediano) */}
+
+        {/* Prioridad 3: Angular Template (pequeño) */}
+        <div className="row-span-1 col-span-1">
+          <BentoProjectCard project={getProject(6)} />
+        </div>
+        {/* Prioridad 3: Angular Dashboard (pequeño) */}
+        <div className="row-span-1 col-span-1">
+          <BentoProjectCard project={getProject(7)} />
+        </div>
+      </div>
+    </section>
   );
 };
+
 export default ProjectGrid;

@@ -1,9 +1,16 @@
 {
   "projects": [
     {
+      "title": "Negoco Cloud",
+      "description": "Landing page de un SaaS CRM para empresas del sector energético.",
+      "image": "/images/negococloud.webp",
+      "href": "https://negococloud.es",
+      "technologies": ["astro", "react", "tailwind"]
+    },
+    {
       "title": "Asesoría MSL",
       "description": "Web corporativa para una asesoría fiscal y laboral.",
-      "image": "/images/asesoria.avif",
+      "image": "/images/asesoria.webp",
       "href": "https://asesoresmsl.com/",
       "technologies": ["astro", "javascript", "tailwind", "firebase"]
     },
@@ -19,14 +26,14 @@
       "description": "Marketplace de compra y alquiler de inmuebles.",
       "image": "/images/realty.webp",
       "href": "https://realtymarket.vercel.app/",
-      "technologies": ["angular", "nodejs", "javascript", "mongodb"]
+      "technologies": ["angular", "javascript", "mongodb"]
     },
     {
       "title": "Negoco",
       "description": "Comparador de Telefonía y Ahorro Energético.",
       "image": "/images/negoco.avif",
       "href": "https://negoco.vercel.app",
-      "technologies": ["angular", "nodejs", "javascript", "mongodb"]
+      "technologies": ["angular", "javascript", "mongodb"]
     },
 
     {
