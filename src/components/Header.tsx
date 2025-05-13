@@ -20,11 +20,11 @@ export default function Header() {
   }, []);
   return (
     <header
-      className={`max-w-2xl mx-auto flex justify-center items-center rounded-xl py-5 px-10 w-full sticky top-0 z-10 backdrop-blur-lg transition-all duration-300 ease-in-out
+      className={`max-w-2xl mx-auto flex justify-center items-center    w-full sticky top-0 z-10 backdrop-blur-xl transition-all duration-300 ease-in-out
         ${
           isScrolled
-            ? "border border-white/10 top-4"
-            : "border-[var(--background-color)]"
+            ? "border border-white/10 top-4 rounded-full px-4 py-4 bg-white/30"
+            : "border-[var(--background-color)] rounded-xl px-10 py-5"
         }
         `}
     >
